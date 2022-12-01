@@ -1,0 +1,56 @@
+[
+  {
+    "Name": "ASUS Sagaris GK1100 Mechanical Gaming Keyboard",
+    "Description": "Precise and responsive keystrokes for incredible gaming.",
+    "Price": 139,
+    "PictureUrl": "images/products/asus_kb_1.png",
+    "Condition": 0,
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Cerberus Keyboard",
+    "Description": "LED backlit USB gaming keyboard",
+    "Price": 69.99,
+    "PictureUrl": "images/products/asus_kb_2.png",
+    "Condition": 1,
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "TUF Gaming VG27VQM",
+    "Description": "UF Gaming Curved Monitor with Extreme Low Motion Blur.",
+    "Price": 332,
+    "PictureUrl": "images/products/asus_mon_1.png",
+    "Condition": 0,
+    "ProductTypeId": 2,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "HP M24fw FHD Monitor",
+    "Description": "FHD(1920x1080) 5ms GtG.",
+    "Price": 130,
+    "PictureUrl": "images/products/hp_mon_1.png",
+    "Condition": 0,
+    "ProductTypeId": 2,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "HP 410 Slim Silver Bluetooth Mouse",
+    "Description": "Designed to Click With Everyone.",
+    "Price": 13,
+    "PictureUrl": "images/products/hp_mouse_1.png",
+    "Condition": 1,
+    "ProductTypeId": 3,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "HyperX Alloy Origins - Mechanical Gaming Keyboard",
+    "Description": "Limited Itachi Edition.",
+    "Price": 112,
+    "PictureUrl": "images/products/hp_kb_1.png",
+    "Condition": 0,
+    "ProductTypeId": 1,
+    "ProductBrandId": 2
+  }
+]

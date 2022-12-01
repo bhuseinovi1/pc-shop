@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Name": "Keyboards"
+  },
+  {
+    "Id": 2,
+    "Name": "Monitors"
+  },
+  {
+    "Id": 3,
+    "Name": "Mouses"
+  }
+]

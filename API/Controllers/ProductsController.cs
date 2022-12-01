@@ -22,7 +22,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts() // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
+        public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts() // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
         {
             var products = await _repo.GetProductsAsync();
             /* var products = await _context.Products.ToListAsync(); */
@@ -34,6 +34,22 @@ namespace API.Controllers
         {
             var product = await _repo.GetProductByIdAsync(id);
             return Ok(product);
+        }
+
+        [HttpGet("types")]
+        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes() // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
+        {
+            var productsT = await _repo.GetProductTypesAsync();
+            /* var products = await _context.Products.ToListAsync(); */
+            return Ok(productsT);
+        }
+
+        [HttpGet("brands")]
+        public async Task<ActionResult<IReadOnlyList<Product>>> GetProductBrands() // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
+        {
+            var productsB = await _repo.GetProductBrandsAsync();
+            /* var products = await _context.Products.ToListAsync(); */
+            return Ok(productsB);
         }
     }
 }
