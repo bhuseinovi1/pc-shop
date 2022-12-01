@@ -1,5 +1,5 @@
 using System.Net;
-using API.Data;
+using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 // postavlja konfiguracije aplikacije kao što su root folder i slično
