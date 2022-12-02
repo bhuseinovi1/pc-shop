@@ -36,5 +36,12 @@ namespace Infrastructure.Data
         {
             return await _context.ProductBrands.ToListAsync();
         }
+
+
+        // primjer
+        public async Task<IReadOnlyList<Product>> GetASUSProducts()
+        {
+            return await _context.Products.Where(p=>p.ProductBrandId == 1).Include(p=>p.ProductBrand).ToListAsync();
+        }
     }
 }
