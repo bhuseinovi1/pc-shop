@@ -8,6 +8,7 @@ using Core.Entities;
 using Infrastructure.Data;
 using Core.Interfaces;
 using Core.Specifications;
+using API.Dtos;
 
 namespace API.Controllers
 {
@@ -37,25 +38,48 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts() // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
+        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts() // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
         {
             var spec = new ProductsWithTypesAndBrandsSpecification();
             var products = await _productsRepo.ListAsync(spec);
             /* var products = await _productsRepo.ListAllAsync(); */
            /*  var products = await _repo.GetProductsAsync(); */
             /* var products = await _context.Products.ToListAsync(); */
-            return Ok(products); 
+            var productsToReturn = products.Select(product=> new ProductToReturnDto {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                PictureUrl = product.PictureUrl,
+                Condition = product.Condition.ToString(),
+                ProductBrand = product.ProductBrand.Name,
+                ProductType = product.ProductType.Name
+            }).ToList();
+            return Ok(productsToReturn); 
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
 
             var product = await _productsRepo.GetEntityWithSpec(spec);
             /* var product = await _productsRepo.GetByIdAsync(id); */
             /* var product = await _repo.GetProductByIdAsync(id); */
-            return Ok(product);
+
+            // data transfer object (DTO)
+            var productToReturnDto = new ProductToReturnDto{
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                PictureUrl = product.PictureUrl,
+                Condition = product.Condition.ToString(),
+                ProductBrand = product.ProductBrand.Name,
+                ProductType = product.ProductType.Name
+            };
+
+            return Ok(productToReturnDto);
         }
 
         [HttpGet("types")]
