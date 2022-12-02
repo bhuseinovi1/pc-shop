@@ -41,9 +41,9 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts() // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
+        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(string? sort,int? brandId, int? typeId) // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var spec = new ProductsWithTypesAndBrandsSpecification(sort, brandId, typeId);
             var products = await _productsRepo.ListAsync(spec);
             /* var products = await _productsRepo.ListAllAsync(); */
            /*  var products = await _repo.GetProductsAsync(); */
