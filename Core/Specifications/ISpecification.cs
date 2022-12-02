@@ -15,5 +15,11 @@ namespace Core.Specifications
         // za sortiranje
         Expression<Func<T,object>> OrderBy {get;}
         Expression<Func<T, object>> OrderByDescending { get; }
+
+
+        // paginacija
+        int Take {get;}
+        int Skip {get;}
+        bool isPagingEnabled {get;}
     }
 }

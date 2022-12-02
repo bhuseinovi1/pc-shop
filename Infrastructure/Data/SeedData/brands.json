@@ -6,5 +6,9 @@
   {
     "Id": 2,
     "Name": "HP"
+  },
+  {
+    "Id": 3,
+    "Name": "Logitech"
   }
 ]

@@ -10,5 +10,9 @@
   {
     "Id": 3,
     "Name": "Mouses"
+  },
+  {
+    "Id": 4,
+    "Name": "Cases"
   }
 ]

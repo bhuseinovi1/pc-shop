@@ -10,6 +10,7 @@ using Core.Interfaces;
 using Core.Specifications;
 using API.Dtos;
 using AutoMapper;
+using API.Helpers;
 
 namespace API.Controllers
 {
@@ -41,10 +42,17 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(string? sort,int? brandId, int? typeId) // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery]ProductSpecParams productParams) // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification(sort, brandId, typeId);
+            var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
+
+            var countSpec = new ProductWithFiltersForCountSpecification(productParams);
+
+            var totalItems = await _productsRepo.CountAsync(countSpec);
+
             var products = await _productsRepo.ListAsync(spec);
+
+
             /* var products = await _productsRepo.ListAllAsync(); */
            /*  var products = await _repo.GetProductsAsync(); */
             /* var products = await _context.Products.ToListAsync(); */
@@ -60,7 +68,7 @@ namespace API.Controllers
             }).ToList(); */
 
             var productsToReturn = _mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDto>>(products);
-            return Ok(productsToReturn); 
+            return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex,productParams.PageSize,totalItems, productsToReturn)); 
         }
 
         [HttpGet("{id}")]

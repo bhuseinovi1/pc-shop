@@ -25,6 +25,7 @@ namespace Core.Specifications
 
         public Expression<Func<T, object>> OrderByDescending {get; private set;}
 
+
         protected void AddInclude(Expression<Func<T,object>> includeExp) {
             Includes.Add(includeExp);
         }
@@ -37,5 +38,20 @@ namespace Core.Specifications
         {
             OrderByDescending = orderByDescExpression;
         }
+
+
+
+        protected void ApplyPaging(int skip,int take)
+        {
+            Skip = skip;
+            Take = take;
+            isPagingEnabled = true;
+        }
+
+        public int Take {get; private set;}
+
+        public int Skip { get; private set; }
+
+        public bool isPagingEnabled {get; private set;}
     }
 }

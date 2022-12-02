@@ -52,5 +52,68 @@
     "Condition": 0,
     "ProductTypeId": 1,
     "ProductBrandId": 2
+  },
+  {
+    "Name": "Case",
+    "Description": "Case",
+    "Price": 50,
+    "PictureUrl": "images/products/hp_kb_1.png",
+    "Condition": 0,
+    "ProductTypeId": 4,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "New Case",
+    "Description": "Case",
+    "Price": 1000,
+    "PictureUrl": "images/products/hp_kb_1.png",
+    "Condition": 0,
+    "ProductTypeId": 4,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Ultimate keyboard",
+    "Description": "Ultimate keyboard",
+    "Price": 112,
+    "PictureUrl": "images/products/hp_kb_1.png",
+    "Condition": 0,
+    "ProductTypeId": 1,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Blue mouse",
+    "Description": "Limited Itachi Edition.",
+    "Price": 14,
+    "PictureUrl": "images/products/hp_kb_1.png",
+    "Condition": 0,
+    "ProductTypeId": 3,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Yellow mouse",
+    "Description": "Limited Itachi Edition.",
+    "Price": 115,
+    "PictureUrl": "images/products/hp_kb_1.png",
+    "Condition": 0,
+    "ProductTypeId": 3,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "Funny Monitor",
+    "Description": "Limited Itachi Edition.",
+    "Price": 75.99,
+    "PictureUrl": "images/products/hp_kb_1.png",
+    "Condition": 1,
+    "ProductTypeId": 2,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Holy Keyboard",
+    "Description": "Limited Itachi Edition.",
+    "Price": 1200,
+    "PictureUrl": "images/products/hp_kb_1.png",
+    "Condition": 0,
+    "ProductTypeId": 1,
+    "ProductBrandId": 3
   }
 ]
