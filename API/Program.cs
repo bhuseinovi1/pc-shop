@@ -19,6 +19,11 @@ builder.Services.AddDbContext<StoreContext>(x=> x.UseSqlite(builder.Configuratio
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(opt => {
+    opt.AddPolicy("CorsPolicy", policy => {
+        policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+    });
+});
 
 /* builder.Services.AddHttpsRedirection(options => {
     options.RedirectStatusCode = (int)HttpStatusCode.TemporaryRedirect;options.HttpsPort = 7025;
@@ -54,6 +59,8 @@ app.UseHsts();
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
