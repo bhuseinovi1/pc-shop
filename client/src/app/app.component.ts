@@ -11,9 +11,8 @@ import { IProduct } from './shared/models/product';
 export class AppComponent implements OnInit {
 
   title = 'PC SHOP';
-  products: IProduct[] | undefined;
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   ngOnInit(): void {
     /* this.http.get('https://localhost:5209/api/products?pageSize=50').subscribe((response: any) => {
@@ -21,13 +20,5 @@ export class AppComponent implements OnInit {
     }, error => {
       console.log(error);
     }) */
-    this.http.get('https://localhost:5209/api/products?pageSize=50').subscribe({
-      next: (p : IPagination) => {
-        this.products = p.data;
-      },
-      error: (e) => console.log(e),
-      complete: () => console.info('complete')
-    }
-    )
   }
 }
