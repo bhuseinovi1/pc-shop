@@ -15,6 +15,7 @@
       </select>
       <h5 class="text-warning ml-3">Brands</h5>
       <ul class="list-group my-3">
+        <a href="#" style="text-decoration: none;">
         <li
           class="list-group-item"
           *ngFor="let brand of brands"
@@ -24,9 +25,11 @@
         >
           {{ brand.name }}
         </li>
+        </a>
       </ul>
       <h5 class="text-warning ml-3">Types</h5>
       <ul class="list-group my-3">
+        <a href="#" style="text-decoration: none;">
         <li
           class="list-group-item"
           *ngFor="let type of types"
@@ -36,6 +39,7 @@
         >
           {{ type.name }}
         </li>
+        </a>
       </ul>
     </section>
 
