@@ -9,6 +9,7 @@ import { PaginationModule} from 'ngx-bootstrap/pagination'
   imports: [
     CommonModule,
     PaginationModule.forRoot()
-  ]
+  ],
+  exports: [PaginationModule]
 })
 export class SharedModule { }
