@@ -18,9 +18,11 @@ Technologies used while building an application:
 
 ### Database Design
 
-[products-db]
-[producttypes-db]
-[productbrands-db]
+![products-db](images/products-db.jpg)
+
+![producttypes-db]
+
+![productbrands-db]
 
 Initially, a database is seeded with a mock data generated from Mockaroo with minor changes. As data that is being used is not real, names of the products that are generated represent fake company names.
 They were not changed purpusefully because of, not only randomness, but good representation of the sorting task.
@@ -57,7 +59,7 @@ Recommended versions (used while developing this app):
 
 ### Screenshots
 
-[app-ss]
+![app-ss](images/app-ss.jpg)
    
 
 [app-ss]: images/app-ss.jpg
