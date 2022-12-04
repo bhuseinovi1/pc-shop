@@ -117,13 +117,12 @@ namespace API.Controllers
 
         // BEZ GENERIČKIH KLASA
 
-        [HttpGet("asus")]
-        public async Task<ActionResult<IReadOnlyList<Product>>> GetASUSProducts() // ActionResult znaci da će povratna vrijednost biti neki oblik HTTP odgovora (200 ili 400...)
+       /*  [HttpGet("asus")]
+        public async Task<ActionResult<IReadOnlyList<Product>>> GetASUSProducts() 
         {
             var productsASUS = _nonGenericRepo.GetASUSProducts();
-            /* var productsB = await _repo.GetProductBrandsAsync(); */
-            /* var products = await _context.Products.ToListAsync(); */
+         
             return Ok(productsASUS);
-        }
+        } */
     }
 }
